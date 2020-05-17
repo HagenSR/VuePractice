@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import practice from './components/practice.vue';
+import tasks from './components/tasks.vue';
 
 
 Vue.use(VueRouter);
@@ -8,8 +8,8 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
   routes: [
-    { path: "/", component: practice },
-    { path: "/practice", component: practice },
+    { path: "/", component: tasks },
+    { path: "/practice", component: tasks },
   ]
 });
 

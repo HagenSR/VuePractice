@@ -1,36 +1,39 @@
+<style scoped>
+#in {
+  background-color: #f2f2f2;
+}
+</style>
+
 <template>
   <v-app>
     <div class="practice">
-      <h3>incomplete Tasks</h3>
-
-      <h3>add a task</h3>
-      <v-input type="text" id="in" v-model="message"></v-input>
-      <button @click= "addTask()">Add task</button>
       <v-container>
-        <v-card v-for="task in incomplete" v-bind:key="task.TODO">
-          <p class="display-1 text--primary"></p>
-          <h4>{{task.TODO}}</h4>
-          <p>done? {{task.Done}}</p>
-          <v-btn color = 'success' @click = "flip(task.TODO)">Complete?</v-btn>
-        </v-card>
+        <h3>add a task</h3>
+        <input type="text" id="in" v-model="message" />
+        <v-btn @click="addTask()">Add task</v-btn>
+      </v-container>
+      <h3>incomplete Tasks</h3>
+      <v-container>
+        <task v-for="task in incomplete" v-bind:key="task.TODO" :tsk="task" @flip="flip"></task>
       </v-container>
       <h3>All Tasks</h3>
       <v-container>
-        <v-card v-for="task in arri" v-bind:key="task.TODO">
-          <p class="display-1 text--primary"></p>
-          <h4>{{task.TODO}}</h4>
-          <p>done? {{task.Done}}</p>
-          <v-btn color="success" @click="flip(task.TODO)">Complete?</v-btn>
+        <task v-for="task in arri" v-bind:key="task.TODO" :tsk="task" @flip="flip">
           <v-btn color="error" @click="dlt(task.TODO)">Delete?</v-btn>
-        </v-card>
+        </task>
       </v-container>
     </div>
   </v-app>
 </template>
 
 <script>
+import task from "./next.vue";
 export default {
-  name: "practice",
+  name: "tasks",
+  components: {
+    task
+  },
+
   data: () => ({
     message: "Add a task",
     arri: [
@@ -46,8 +49,7 @@ export default {
         TODO: "Go to target",
         Done: false
       }
-    ],
-    title: "YEet"
+    ]
   }),
   methods: {
     addTask() {
@@ -80,4 +82,6 @@ export default {
   }
 };
 </script>
+
+
 
