@@ -10,19 +10,22 @@
       <v-navigation-drawer v-model="drawer" absolute temporary>
         <v-list nav dense>
           <v-list-item-group v-model="group" active-class="deep-purple--text text--accent-4">
+            <router-link to="/tasks">
             <v-list-item>
               <v-list-item-icon>
                 <v-icon>mdi-home</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>Practice</v-list-item-title>
+              <v-list-item-title>Tasks</v-list-item-title>
             </v-list-item>
-
+            </router-link>
+            <router-link to="/tabs">
             <v-list-item>
               <v-list-item-icon>
                 <v-icon>mdi-account</v-icon>
               </v-list-item-icon>
-              <v-list-item-title>Something Else?</v-list-item-title>
+              <v-list-item-title>Tabs</v-list-item-title>
             </v-list-item>
+            </router-link>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -33,9 +36,9 @@
 
 <script>
 export default {
-    name: 'navigation',
-    data: () => ({
-         drawer: false,
-    })
-}
+  name: "navigation",
+  data: () => ({
+    drawer: false
+  })
+};
 </script>

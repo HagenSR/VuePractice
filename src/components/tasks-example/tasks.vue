@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import task from "./next.vue";
+import task from "./task.vue";
 export default {
   name: "tasks",
   components: {
