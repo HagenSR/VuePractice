@@ -4,12 +4,12 @@
 }
 </style>
 
-<template>
-  <v-app>
-    <div class="practice">
+<template>    
+ <v-app>
+    <div class="practice" id="pract">
       <v-container>
         <h3>add a task</h3>
-        <input type="text" id="in" v-model="message" />
+        <input type="text" id="in" v-model="message" placeholder="add a task" />
         <v-btn @click="addTask()">Add task</v-btn>
       </v-container>
       <h3>incomplete Tasks</h3>
@@ -23,19 +23,20 @@
         </task>
       </v-container>
     </div>
-  </v-app>
+ </v-app>
 </template>
 
 <script>
 import task from "./task.vue";
 export default {
   name: "tasks",
+  el: "pract",
   components: {
     task
   },
 
   data: () => ({
-    message: "Add a task",
+    message: "",
     arri: [
       {
         TODO: "Walk the dog",

@@ -26,6 +26,14 @@
               <v-list-item-title>Tabs</v-list-item-title>
             </v-list-item>
             </router-link>
+            <router-link to="/modal">
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Modal</v-list-item-title>
+            </v-list-item>
+            </router-link>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
@@ -37,8 +45,10 @@
 <script>
 export default {
   name: "navigation",
+ 
   data: () => ({
-    drawer: false
+    drawer: false,
+    group: null,
   })
 };
 </script>
