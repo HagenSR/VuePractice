@@ -1,4 +1,5 @@
 .DS_Store
+.jsonkey
 node_modules
 /dist
 
